@@ -1,0 +1,87 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="Telefono.aspx.cs" Inherits="Examen_2_Veterinaria.Usuarios" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+
+
+        .auto-style3 {
+            font-size: xx-large;
+        }
+    .auto-style4 {
+        color: #FF6600;
+    }
+        .auto-style5 {
+            font-size: large;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <p>
+        <br />
+    </p>
+    <p style="margin-bottom: 19px">
+    </p>
+<p>
+    <strong><span class="auto-style3">Usuarios</span></strong></p>
+<p class="auto-style4">
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------&nbsp;</p>
+<p>
+    <strong>Ingrese su usuario&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nombre del usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>
+<p>
+    <asp:TextBox ID="Tid1" runat="server" Width="109px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="Tfecha1" runat="server" Width="141px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+<p>
+</p>
+<p>
+    <asp:Button ID="Button1" runat="server" Text="Actualizar" Width="147px" OnClick="Button1_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Button2" runat="server" Text="Borrar" Width="147px" OnClick="Button1_Click" />
+&nbsp;&nbsp;&nbsp;
+</p>
+    <p>
+    </p>
+<p class="auto-style5">
+    Lista de usuarios</p>
+<p class="auto-style4">
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+    <p>
+    </p>
+    <p>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" SortExpression="NombreUsuario" />
+                <asp:BoundField DataField="LoginUsuario" HeaderText="LoginUsuario" SortExpression="LoginUsuario" />
+            </Columns>
+            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+            <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+            <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+            <RowStyle BackColor="White" ForeColor="#003399" />
+            <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+            <SortedAscendingCellStyle BackColor="#EDF6F6" />
+            <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+            <SortedDescendingCellStyle BackColor="#D6DFDF" />
+            <SortedDescendingHeaderStyle BackColor="#002876" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VETERINARIAConnectionString %>" DeleteCommand="DELETE Usuarios WHERE  LoginUsuario = @CODIGO" SelectCommand="SELECT [NombreUsuario], [LoginUsuario] FROM [USUARIOS]" UpdateCommand="UPDATE Usuarios SET NombreUsuario = @NombreUsuario WHERE LoginUsuario = @CODIGO">
+            <DeleteParameters>
+                <asp:ControlParameter ControlID="Tid1" Name="CODIGO" PropertyName="Text" />
+            </DeleteParameters>
+        </asp:SqlDataSource>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+</asp:Content>
